@@ -1,7 +1,8 @@
 export class Flipper {
   flip(word: string) {
-    const firstHalf = word.slice(0, word.length / 2);
-    const secondHalf = word.slice(word.length / 2, word.length);
+    const half = word.length / 2;
+    const firstHalf = word.slice(0, half);
+    const secondHalf = word.slice(half, word.length);
     return secondHalf + firstHalf;
   }
 }
