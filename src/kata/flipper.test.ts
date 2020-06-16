@@ -24,3 +24,11 @@ Deno.test("should flip several words", () => {
 
   assertEquals(actual, "lohel\nlaho");
 });
+
+Deno.test("should only capitalize the first letter", () => {
+  const flipper = new Flipper();
+
+  const actual = flipper.flip("Hello");
+
+  assertEquals(actual, "Lohel");
+});
