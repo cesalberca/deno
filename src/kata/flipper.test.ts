@@ -16,3 +16,11 @@ Deno.test("should flip a word whose length is odd by flipping after the next ele
 
   assertEquals(actual, "lohel");
 });
+
+Deno.test("should flip several words", () => {
+  const flipper = new Flipper();
+
+  const actual = flipper.flip("hello\nhola");
+
+  assertEquals(actual, "lohel\nlaho");
+});
