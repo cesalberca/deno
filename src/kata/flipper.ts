@@ -1,13 +1,11 @@
 export class Flipper {
   flip(string: string) {
-    const flippedWords: string[] = [];
-    for (const word of string.split("\n")) {
+    return string.split("\n").map(word => {
       const isOdd = word.length % 2 !== 0;
       const half = Math.floor(word.length / 2) + (isOdd ? 1 : 0);
       const firstHalf = word.slice(0, half);
       const secondHalf = word.slice(half, word.length);
-      flippedWords.push(secondHalf + firstHalf);
-    }
-    return flippedWords.join("\n");
+      return secondHalf + firstHalf
+    }).join("\n");
   }
 }
