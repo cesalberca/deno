@@ -1,14 +1,7 @@
-import { readFileStr } from 'https://deno.land/std@0.57.0/fs/read_file_str.ts';
-
-
 export class Flipper {
-  async open(filename: string) {
-    const file = await readFileStr(filename);
-    
-    const lines = file.split("\n")
-
-
-
-    return file;
+  flip(word: string) {
+    const firstHalf = word.slice(0, word.length / 2);
+    const secondHalf = word.slice(word.length / 2, word.length);
+    return secondHalf + firstHalf;
   }
 }
