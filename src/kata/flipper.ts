@@ -1,6 +1,6 @@
 export class Flipper {
   flip(string: string) {
-    return string.split("\n").map(word => {
+    return string.split("\n").map((word) => {
       const isOdd = word.length % 2 !== 0;
       const half = Math.floor(word.length / 2) + (isOdd ? 1 : 0);
 
@@ -11,9 +11,11 @@ export class Flipper {
       const firstLetterSecondHalf = secondHalf.slice(0, 1);
 
       const shouldCapitalize = this.isUpperCased(firstLetterFirstHalf);
-      const capitalizedSecondHalf = (shouldCapitalize ? firstLetterSecondHalf.toUpperCase() : firstLetterSecondHalf) + secondHalf.slice(1, secondHalf.length);
+      const capitalizedSecondHalf = (shouldCapitalize
+        ? firstLetterSecondHalf.toUpperCase()
+        : firstLetterSecondHalf) + secondHalf.slice(1, secondHalf.length);
       const lowerCasedFirstHalf = firstHalf.toLowerCase();
-      return capitalizedSecondHalf + lowerCasedFirstHalf
+      return capitalizedSecondHalf + lowerCasedFirstHalf;
     }).join("\n");
   }
 
