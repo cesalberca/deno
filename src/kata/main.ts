@@ -1,10 +1,24 @@
-import {
-  ensureFile
-} from "https://deno.land/std@0.69.0/fs/mod.ts";
 import { Flipper } from "./flipper.ts";
 
-const frameworks = await Deno.readTextFileSync("./frameworks.txt");
+const frameworks = `
+LitElement
+Angular
+Ember
+React
+Vue
+Stencil
+Preact
+Snowpack
+jQuery
+Svelte
+Express
+Sails
+Koa
+Nuxt
+Next
+Node
+Deno
+`
 const flipper = new Flipper();
 const flippedFrameworks = flipper.flip(frameworks);
-await ensureFile("./worksframe.txt");
-await Deno.writeTextFileSync("./worksframe.txt", flippedFrameworks);
+console.log(flippedFrameworks)
